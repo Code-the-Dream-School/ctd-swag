@@ -1,13 +1,14 @@
 import ProductCard from './ProductCard';
 
-function ProductList({ inventory, children }) {
+function ProductList({ inventory, handleAddItemToCart }) {
   return (
     <ul className="productList">
-      {children}
       {inventory.map((product) => {
         return (
           <ProductCard
+            id={product.id}
             key={product.id}
+            handleAddItemToCart={handleAddItemToCart}
             name={product.name}
             description={product.description}
           />

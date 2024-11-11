@@ -1,6 +1,6 @@
 import placeholder from './assets/placeholder.png';
 
-function ProductCard({ name, description }) {
+function ProductCard({ id, name, description, handleAddItemToCart }) {
   return (
     <li className="productCard">
       <div className="productPreview">
@@ -11,8 +11,7 @@ function ProductCard({ name, description }) {
         <p>{description}</p>
       </div>
       <div className="productButtons">
-        <button disabled={true}>Details</button>
-        <button>Add</button>
+        <button onClick={() => handleAddItemToCart(id)}>Add to Cart</button>
       </div>
     </li>
   );
